@@ -1,16 +1,9 @@
-# from numpy.lib.function_base import _parse_input_dimensions, append, copy
-# from enhance.mets_parser import get_mets_infos
 from enhance.json_test import parse_pages_structure
 from epr.features_epr import Features
 from ocr.pipe.pipe import Models
 from enhance.image_cropper import get_images
-# from enhance.alto_parser import get_block_data
 from enhance.alto_parser import process_alto_file
 from ocr.pipe.pipe import ocr
-# from tqdm import tqdm
-# from shutil import copytree
-# from lxml import etree
-# from enhance.mets_utils import adjust_ark_name, update_mets_file
 import constants.constants as ct
 import datetime
 import os
@@ -35,11 +28,7 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 	before = int(round(time.time() * 1000))
 
 	# copy package to new destination
-	old_package_dir = os.path.dirname(old_mets_path)
-	# new_package_dir = output_path + "/new-packages/" + old_package_dir.split('/')[-1]
-	# new_blocks_dir = output_path + "/new-blocks/"
-	# copytree(old_package_dir, new_package_dir)
-	
+	old_package_dir = os.path.dirname(old_mets_path)	
 	original_pages_directory = old_package_dir + "/pages"
 	copied_pages_directory = old_package_dir + "/enhanced/pages"
 
@@ -49,12 +38,6 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 
 	shutil.copytree(original_pages_directory, copied_pages_directory)
 
-
-	# xml parser
-	# parser = etree.XMLParser(remove_blank_text=True, encoding='utf-8')
-	
-	# get blocks
-	# blocks_info, ark, n_blocks = get_mets_infos(old_mets_path)
 	blocks_info, ark, n_blocks = parse_pages_structure(old_package_dir)
 	ark = os.path.basename(old_mets_path)
 	processed_blocks = 0
@@ -78,22 +61,6 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 		alto_file_path = os.path.join(old_package_dir, alto_id)
 		copied_alto_file_path = os.path.join(copied_pages_directory, alto_id) 
 
-	# # loop over all alto files that contain at least 1 block
-	# for alto_id in tqdm(blocks_info):
-
-	# 	# working with blocks for this specific alto
-	# 	blocks_stuff = blocks_info[alto_id]['blocks']
-	# 	if blocks_stuff == None:
-	# 		incomplete_mets(old_mets_path)
-	# 		return
-
-	# 	# get coordinates for every blocks and alto xml tree
-	# 	alto_path = old_package_dir + blocks_info[alto_id]['alto'].replace("file://.", "")
-	# 	blocks_stuff, alto_tree = get_block_data(alto_path, blocks_stuff, features, required_epr, models)
-
-
-	# 	# for every alto image: crop the images for every block
-	# 	image_path = old_package_dir + blocks_info[alto_id]['image'].replace("file://.", "")
 		image_path = blocks_info[alto_id]['image']
 		blocks_stuff = get_images(image_path, blocks_stuff)
 		if blocks_stuff == None:
@@ -102,14 +69,9 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 		
 		# for every block
 		for block_id in blocks_stuff:
-
-			# ark = blocks_stuff[block_id].ark
-			# b_type = blocks_stuff[block_id].block_type
 			composed = blocks_stuff[block_id].composed
 			rotated = blocks_stuff[block_id].rotated
 			text = blocks_stuff[block_id].ocr_ori
-			# lang = blocks_stuff[block_id].lang_ori
-			# lang = 'de'
 			enhance = blocks_stuff[block_id].enhance
 			n_chars_ori = len(text)
 
@@ -120,13 +82,6 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 			elif text == "":
 				print('ignoring empty text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_mets_path)
 				continue
-			# elif required_epr > -1:
-			# 	if lang not in ct.SUPPORTED_LANGS:
-			# 		print('ignoring ' + block_id + ' with unsupported lang (' + lang + ') belonging to ' + old_mets_path)
-			# 		continue
-			# 	elif lang not in models.epr['trigrams']:
-			# 		print('ignoring ' + block_id + ' since lang (' + lang + ') is not supported by epr model')
-			# 		continue
 
 			# create block dict for data.jsonl
 			block_dict = {
@@ -134,9 +89,7 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 				'altoId': alto_id,
 				'epr': enhance,
 				'processed': False,
-				# 'altoPathOri': "./" + alto_path,
 				'altoPathOri': "./" + alto_file_path,
-				# 'blockType': b_type,
 				'composedBlock': composed,
 				'charsOri': n_chars_ori
 			}
@@ -148,11 +101,6 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 
 			# predicted enhancement is high enough: run ocr
 			block = ocr(blocks_stuff[block_id], models, alto=True, addOffset=True)
-			# if block.ocr_alto == None or blocks_stuff[block_id].ocr_alto == None:
-			# 	incomplete_mets(old_mets_path)
-			# 	return
-
-
 
 			# Load the JSON file
 			with open(copied_alto_file_path, 'r', encoding='utf-8') as json_file:
@@ -184,57 +132,7 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 			with open(copied_alto_file_path, 'w', encoding='utf-8') as json_file:
 				json.dump(json_data, json_file, indent=2, ensure_ascii=False)			
 
-			# # write new alto file to new blocks folder
-			# folder_path = new_blocks_dir+ark+'/'
-			# # file_name = adjust_ark_name(ark)+'-'+alto_id+'-'+block_id+'.xml'
-			# file_name = alto_id
-			# file_path = folder_path+file_name
-			# # if composed:
-			# # 	file_name.replace('.xml', '-CB.xml')
-			# if not os.path.exists(folder_path):
-			# 	os.makedirs(folder_path)
-			# # with open(file_path, 'w') as f:
-			# # 	f.write(block.ocr_alto)
-			
-			# # adjust dict for data.jsonl
-			# block_dict['processed'] = True
-			# block_dict['font'] = block.font
-			# splits = new_blocks_dir.split('/')
-			# alto_path_new = './'+splits[-3]+'/'+splits[-2]+'/'+splits[-1]+adjust_ark_name(ark)+'/'+file_name
-			# block_dict['altoPathNew'] = alto_path_new
-			# block_dict['langOri'] = lang
-			# block_dict['charsNew'] = len(block.ocr)
-			# json_dict[ark].append(block_dict)
-
-			# increment counter
 			processed_blocks += 1
-
-		# # removing old text lines of alto file
-		# for b_type in ['TextBlock', 'ComposedBlock']:
-		# 	for b in alto_tree.findall(".//{http://www.loc.gov/standards/alto/ns-v3#}" + b_type):
-		# 		if b.get("ID") in blocks_stuff and blocks_stuff[b.get("ID")].ocr_alto != None:
-		# 			for child in b.getchildren():
-		# 				child.getparent().remove(child)
-
-		# # adding new text lines to alto file
-		# for e in alto_tree.iter():
-		# 	if e.tag.endswith('TextBlock') or e.tag.endswith('ComposedBlock'):
-		# 		if e.get("ID") in blocks_stuff and blocks_stuff[e.get("ID")].ocr_alto != None:
-		# 			for e2 in etree.fromstring(blocks_stuff[e.get("ID")].ocr_alto):
-		# 				e2.tail = "\n"
-		# 				if e2.tag == 'TextLine':
-		# 					e.append(e2)
-		# etree.indent(alto_tree, space="	")
-
-		# # write new alto file
-		# alto_str = etree.tostring(alto_tree, pretty_print=True, xml_declaration=True, encoding="utf-8")
-		# mets_dir_small = old_package_dir.split('/')[-1]
-		# p = new_package_dir + alto_path.split(mets_dir_small)[-1]
-		# with open(p, 'wb') as f:
-		# 	f.write(alto_str)
-
-	# adjust mets file
-	# update_mets_file(new_package_dir, old_mets_path, parser)
 
 	time_needed = int(round(time.time() * 1000))-before
 	print(ark + ' processed successfully in ' + str(time_needed) + ' ms (new ocr for ' + str(processed_blocks) + '/' + str(n_blocks) + ' target blocks)')

@@ -7,13 +7,7 @@ from fcr.train_set_fcr import create_train_set_fcr
 from fcr.train_fcr import train_model_fcr
 from fcr.test_fcr import test_model_fcr
 from enhance.alto_improve import improve_alto
-# from ocr.train.create_pairs import create_train_pairs
-# from ocr.train.train_ocr import train_ocr_model
-# from ocr.test.test_ocr import test_on_set
 from ocr.pipe.apply import apply_on_images
-# from seg.test_seg import test_segmentation
-# from epr.train_epr import train_epr_model
-# from epr.test_epr import test_epr_model
 
 # reads config.ini to change some constants
 def read_config():
