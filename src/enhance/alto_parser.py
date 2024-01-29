@@ -104,12 +104,12 @@ class Block:
 		self.lines = None
 		self.ocr = None
 		self.ocr_words = None
-		self.ocr_alto = None
+		# self.ocr_alto = None
 		self.ocr_ori = None
-		self.ocr_gt = None
+		# self.ocr_gt = None
 		self.name = None
-		self.score = None
-		self.score_ori = None
+		# self.score = None
+		# self.score_ori = None
 		self.block_type = None
 		self.page_id = None
 		self.ark = None
@@ -121,10 +121,10 @@ class Block:
 		self.coordinates = None
 		self.offset_alto = None
 		self.tokens_ori = None
-		self.tokens_gt = None
+		# self.tokens_gt = None
 		self.dict_ori = None
 		self.garbage_ori = None
-		self.trigrams_gt = None
+		# self.trigrams_gt = None
 		self.trigrams_ori = None
 		self.enhance = None
 
@@ -214,11 +214,11 @@ def process_alto_file(root_path, alto_file_name, block_data, features, required_
 			block = block_data[block_id]
 			block.tokens_ori = features.get_tokens(block.ocr_ori)
 			lang_ori, trigrams_ori = features.get_ngrams(block.tokens_ori, block.ocr_ori)
-			block.lang_ori = lang_ori
-			if block.lang_ori in ct.SUPPORTED_LANGS and block.lang_ori in models.epr['trigrams']:
-				block = features.compute_features_ori(block)
-				n_gram_score = features.get_ngram_score(trigrams_ori, models.epr['trigrams'][block.lang_ori])
-				x = np.array([block.dict_ori, n_gram_score, block.garbage_ori, features.scale_year(block.year)])
-				block.enhance = predict(models.epr, x, models.epr['k'])
+			block.lang_ori = 'de' # assuming german text
+			# if block.lang_ori in ct.SUPPORTED_LANGS and block.lang_ori in models.epr['trigrams']:
+			block = features.compute_features_ori(block)
+			n_gram_score = features.get_ngram_score(trigrams_ori, models.epr['trigrams'][block.lang_ori])
+			x = np.array([block.dict_ori, n_gram_score, block.garbage_ori, features.scale_year(block.year)])
+			block.enhance = predict(models.epr, x, models.epr['k'])
 
 	return block_data

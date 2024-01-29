@@ -41,7 +41,7 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 	# copytree(old_package_dir, new_package_dir)
 	
 	original_pages_directory = old_package_dir + "/pages"
-	copied_pages_directory = old_package_dir + "/updated/pages"
+	copied_pages_directory = old_package_dir + "/enhanced/pages"
 
 	# Delete the existing destination directory
 	if os.path.exists(copied_pages_directory):
@@ -104,11 +104,12 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 		for block_id in blocks_stuff:
 
 			# ark = blocks_stuff[block_id].ark
-			b_type = blocks_stuff[block_id].block_type
+			# b_type = blocks_stuff[block_id].block_type
 			composed = blocks_stuff[block_id].composed
 			rotated = blocks_stuff[block_id].rotated
 			text = blocks_stuff[block_id].ocr_ori
-			lang = blocks_stuff[block_id].lang_ori
+			# lang = blocks_stuff[block_id].lang_ori
+			# lang = 'de'
 			enhance = blocks_stuff[block_id].enhance
 			n_chars_ori = len(text)
 
@@ -119,13 +120,13 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 			elif text == "":
 				print('ignoring empty text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_mets_path)
 				continue
-			elif required_epr > -1:
-				if lang not in ct.SUPPORTED_LANGS:
-					print('ignoring ' + block_id + ' with unsupported lang (' + lang + ') belonging to ' + old_mets_path)
-					continue
-				elif lang not in models.epr['trigrams']:
-					print('ignoring ' + block_id + ' since lang (' + lang + ') is not supported by epr model')
-					continue
+			# elif required_epr > -1:
+			# 	if lang not in ct.SUPPORTED_LANGS:
+			# 		print('ignoring ' + block_id + ' with unsupported lang (' + lang + ') belonging to ' + old_mets_path)
+			# 		continue
+			# 	elif lang not in models.epr['trigrams']:
+			# 		print('ignoring ' + block_id + ' since lang (' + lang + ') is not supported by epr model')
+			# 		continue
 
 			# create block dict for data.jsonl
 			block_dict = {
@@ -135,7 +136,7 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 				'processed': False,
 				# 'altoPathOri': "./" + alto_path,
 				'altoPathOri': "./" + alto_file_path,
-				'blockType': b_type,
+				# 'blockType': b_type,
 				'composedBlock': composed,
 				'charsOri': n_chars_ori
 			}
@@ -170,8 +171,10 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 					if block.block_id == block_id:
 						enhanced_text = block.ocr
 						original_text = block.ocr_ori
+						predicted_font = block.font
 						
 						# Add the enhanced text to the JSON data
+						region_entry['predicted_font'] = predicted_font
 						region_entry['original_text'] = original_text
 						region_entry['enhanced_text'] = enhanced_text
 						break
