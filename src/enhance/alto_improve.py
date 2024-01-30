@@ -1,4 +1,4 @@
-from enhance.json_test import parse_pages_structure
+from enhance.page_parser import parse_pages_structure
 from epr.features_epr import Features
 from ocr.pipe.pipe import Models
 from enhance.image_cropper import get_images
