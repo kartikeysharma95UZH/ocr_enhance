@@ -1,8 +1,8 @@
-from enhance.page_parser import parse_pages_structure
+from enhance.issue_parser import parse_pages_structure
 from epr.features_epr import Features
 from ocr.pipe.pipe import Models
 from enhance.image_cropper import get_images
-from enhance.alto_parser import process_alto_file
+from enhance.page_parser import process_pages_file
 from ocr.pipe.pipe import ocr
 import constants.constants as ct
 import datetime
@@ -11,8 +11,8 @@ import json
 import time
 import shutil
 
-def incomplete_mets(mets_path):
-	print('mets not processed entirely: ' + mets_path)
+def incomplete_issue(issue_path):
+	print('Issue not processed entirely: ' + issue_path)
 
 # writes out completely processed mets issues
 def add_to_json(blocks, path):
@@ -22,13 +22,13 @@ def add_to_json(blocks, path):
 		output.write(json.dumps(blocks) + "\n")
 
 # pipeline for processing a single mets/alto package
-def process_package(old_mets_path, models, output_path, features, required_epr):
+def process_package(old_issues_path, models, output_path, features, required_epr):
 
 	# start clock
 	before = int(round(time.time() * 1000))
 
 	# copy package to new destination
-	old_package_dir = os.path.dirname(old_mets_path)	
+	old_package_dir = os.path.dirname(old_issues_path)	
 	original_pages_directory = old_package_dir + "/pages"
 	copied_pages_directory = old_package_dir + "/enhanced/pages"
 
@@ -39,15 +39,15 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 	shutil.copytree(original_pages_directory, copied_pages_directory)
 
 	blocks_info, ark, n_blocks = parse_pages_structure(old_package_dir)
-	ark = os.path.basename(old_mets_path)
+	ark = os.path.basename(old_issues_path)
 	processed_blocks = 0
 	if ark == None:
-		print("couldn't identify ark in " + old_mets_path)
-		incomplete_mets(old_mets_path)
+		print("couldn't identify ark in " + old_issues_path)
+		incomplete_issue(old_issues_path)
 		return
 	elif n_blocks == 0:
-		print("found 0 blocks for requested types in " + old_mets_path)
-		incomplete_mets(old_mets_path)
+		print("found 0 blocks for requested types in " + old_issues_path)
+		incomplete_issue(old_issues_path)
 		return
 
 	# create json dict for package
@@ -57,14 +57,14 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
     # Iterate through each JSON file in the directory
 	for alto_id, file_data in blocks_info.items():
 		blocks_stuff = blocks_info[alto_id]['blocks']
-		blocks_stuff = process_alto_file(old_package_dir, alto_id, blocks_stuff, features, required_epr, models)
+		blocks_stuff = process_pages_file(old_package_dir, alto_id, blocks_stuff, features, required_epr, models)
 		alto_file_path = os.path.join(old_package_dir, alto_id)
 		copied_alto_file_path = os.path.join(copied_pages_directory, alto_id) 
 
 		image_path = blocks_info[alto_id]['image']
 		blocks_stuff = get_images(image_path, blocks_stuff)
 		if blocks_stuff == None:
-			incomplete_mets(old_mets_path)
+			incomplete_issue(old_issues_path)
 			return
 		
 		# for every block
@@ -77,10 +77,10 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 
 			# check conditions for continuing with this block
 			if rotated:
-				print('ignoring rotated text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_mets_path)
+				print('ignoring rotated text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_issues_path)
 				continue
 			elif text == "":
-				print('ignoring empty text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_mets_path)
+				print('ignoring empty text block: ' + block_id + ' - alto: ' + alto_id + ' - ark: ' + ark + ' - mets: ' + old_issues_path)
 				continue
 
 			# create block dict for data.jsonl
@@ -140,20 +140,19 @@ def process_package(old_mets_path, models, output_path, features, required_epr):
 	return json_dict
 
 # aims to enhance mets/alto by running ocr on a select subset of textblocks only
-def improve_alto(mets_directory, required_epr):
+def improve_pages(issues_directory, required_epr):
 
 	# save start date
 	date = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 	path = ct.OCR_OUTPUT_PATH + str(date)
 
 	# create mets paths list
-	mets_paths = list()
-	for root, _, files in os.walk(mets_directory):
+	issues_paths = list()
+	for root, _, files in os.walk(issues_directory):
 		for f in files:
-			# if f.endswith('-mets.xml'):
 			if f.endswith('-a.json'):
-				mets_paths.append(root + '/' + f)
-	print('identified all METS files within directory')
+				issues_paths.append(root + '/' + f)
+	print('identified all issues files within directory')
 
 	# load models
 	models = Models()
@@ -166,10 +165,10 @@ def improve_alto(mets_directory, required_epr):
 	if required_epr > -1:
 		features = Features()
 
-	for mets_path in mets_paths:
-		mets_path = mets_path.strip()
-		result = process_package(mets_path, models, path, features, required_epr)
+	for issue_path in issues_paths:
+		issue_path = issue_path.strip()
+		result = process_package(issue_path, models, path, features, required_epr)
 		if result != None:
 			add_to_json(result, path+ "/new-blocks/")
 
-	print("\nenhance completed - new METS/ALTO packages and blocks are located in " + path)
+	print("\nenhance completed - new json for pages and blocks are located in " + path)

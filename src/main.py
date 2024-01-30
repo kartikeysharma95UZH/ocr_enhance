@@ -6,7 +6,7 @@ from constants.subparsers import SUBPARSERS
 from fcr.train_set_fcr import create_train_set_fcr
 from fcr.train_fcr import train_model_fcr
 from fcr.test_fcr import test_model_fcr
-from enhance.alto_improve import improve_alto
+from enhance.pages_improve import improve_pages
 from ocr.pipe.apply import apply_on_images
 from data_extraction_s3.extract import prepare_data
 
@@ -63,9 +63,9 @@ def read_config():
 def enhance(args):
     if args.directory and args.directory.endswith(".s3cfg"):
         local_directory = prepare_data(config_file_path=args.directory)
-        improve_alto(local_directory, args.required)
+        improve_pages(local_directory, args.required)
     else:    
-        improve_alto(args.directory, args.required)
+        improve_pages(args.directory, args.required)
 
 ############################## start ##############################
 print("\nStarting OCR Enhancement \n")
