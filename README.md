@@ -45,8 +45,8 @@ Issues along with Pages and corrsponding images as the data in the JSON format
 
 With Python3 (tested on version 3.8.5) installed, clone this repostitory and install the required dependencies:
 
-	git clone https://github.com/natliblux/nautilusocr
-	cd nautilusocr
+	git clone git@github.com:kartikeysharma95UZH/ocr_enhance.git
+	cd ocr_enhance
 	pip3 install -r requirements.txt
 
 Hunspell dependency might require:
