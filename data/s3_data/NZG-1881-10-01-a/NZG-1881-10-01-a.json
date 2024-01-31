@@ -1,0 +1,1237 @@
+{
+  "cdt": "2019-08-21 12:36:59",
+  "i": [
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0001",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "F^\u00abFF* thZsH^\u00abF^F"
+      },
+      "l": {
+        "id": "DIVL108",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030100",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030101",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0002",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "N"
+      },
+      "l": {
+        "id": "DIVL115",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030200",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0003",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "22\u00ab Kornmarttaasse 22\u00ab"
+      },
+      "l": {
+        "id": "DIVL120",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030300",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030301",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030302",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0004",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "Landwirthschaftliche\u00ab. Wenn man die Kart..."
+      },
+      "l": {
+        "id": "DIVL129",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030400",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0005",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "\u00bb\u00ab.\u00bb\u00ab, P^^."
+      },
+      "l": {
+        "id": "DIVL134",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030500",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030501",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030502",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030503",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0006",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "Vermischtes"
+      },
+      "l": {
+        "id": "DIVL145",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030600",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030601",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0007",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "Kirchliche Publikationen"
+      },
+      "l": {
+        "id": "DIVL152",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P3_Ar0030700",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030701",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0008",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "^ttw^LN^"
+      },
+      "l": {
+        "id": "DIVL159",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040000",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0009",
+        "tp": "ad",
+        "pp": [
+          4
+        ],
+        "t": "UNKNOWN"
+      },
+      "l": {
+        "id": "DIVL16",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0042000",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0042001",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0042002",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0042003",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0042004",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0010",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "L^\u00ab\u00abU^OA-Hss5s/2r\u00ab5^F^sOAF ^\u00abO\u00abf"
+      },
+      "l": {
+        "id": "DIVL164",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040100",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040101",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0011",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "F\u00bb \u00bb zf \u00ab \u00bb\u00bb \u00bb\u00bb. ^ ^ < I. MHMng. l. ,?lU..."
+      },
+      "l": {
+        "id": "DIVL171",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040200",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0012",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "t7<Z^^e^"
+      },
+      "l": {
+        "id": "DIVL176",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040300",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0013",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Theater- s5 Musikgesellschaft Gham unter..."
+      },
+      "l": {
+        "id": "DIVL181",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040400",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0014",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "GMimMBteier \u00fceZ Nmm MMerBaaTeB"
+      },
+      "l": {
+        "id": "DIVL186",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040500",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040501",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0015",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Industrieschule A Obergymnasium in Zug"
+      },
+      "l": {
+        "id": "DIVL193",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040600",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040601",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0016",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Kirchweihschie\u00dfen in Walchwyl den \u00bb.. It..."
+      },
+      "l": {
+        "id": "DIVL200",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040700",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040701",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0017",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Anschie\u00dfen in Cham"
+      },
+      "l": {
+        "id": "DIVL207",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040800",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040801",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0018",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "im Betrage von Itttttt Fr"
+      },
+      "l": {
+        "id": "DIVL214",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0040900",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0040901",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0019",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Au verkaufen"
+      },
+      "l": {
+        "id": "DIVL221",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041000",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041001",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0020",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "HssK/\u00abF^\u00abf^\u00ab\u00ab^O^"
+      },
+      "l": {
+        "id": "DIVL228",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041100",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041101",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0021",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Mr Auswanderer"
+      },
+      "l": {
+        "id": "DIVL235",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041200",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041201",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0022",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "AlpenKr\u00e4uter-Magenbitter"
+      },
+      "l": {
+        "id": "DIVL242",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041300",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041301",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041302",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0023",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "/^ , unser reichhaltiges MM Milll8, Wint..."
+      },
+      "l": {
+        "id": "DIVL251",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041400",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0024",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Wasserversorgung Zug"
+      },
+      "l": {
+        "id": "DIVL256",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041500",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041501",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0025",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Br\u00fcckenwaagen"
+      },
+      "l": {
+        "id": "DIVL263",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041600",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041601",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0026",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Anzeige und Empfehlung. F\u00fcr da\u00ab bis nnhi..."
+      },
+      "l": {
+        "id": "DIVL270",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041800",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0027",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Anzeige"
+      },
+      "l": {
+        "id": "DIVL275",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0041900",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0041901",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0028",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Bestellungen"
+      },
+      "l": {
+        "id": "DIVL282",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0042100",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0029",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Edel-Qbstb\u00e4ume"
+      },
+      "l": {
+        "id": "DIVL287",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0042200",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042201",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0030",
+        "tp": "article",
+        "pp": [
+          1
+        ],
+        "t": "In die stunde. Garfields Begr\u00e4bni\u00df, welc..."
+      },
+      "l": {
+        "id": "DIVL29",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010000",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010001",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0031",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "\u00fc\u00abtltl\u00bb\u00bbls\u00bb t\u00abt\u00bbl^,5\u00bbl!>Il!^lt"
+      },
+      "l": {
+        "id": "DIVL294",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042300",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0032",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "V^VFU\u00abF\u00bbs"
+      },
+      "l": {
+        "id": "DIVL299",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0042400",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042401",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0033",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Wir empfehlen dem geehrten Publikum"
+      },
+      "l": {
+        "id": "DIVL306",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042500",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0034",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "WinterK\u00fcten"
+      },
+      "l": {
+        "id": "DIVL311",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0042600",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042601",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0035",
+        "tp": "article",
+        "pp": [
+          4
+        ],
+        "t": "Zur nett. BcMllllll"
+      },
+      "l": {
+        "id": "DIVL318",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P4_Ar0042700",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ar0042701",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0036",
+        "tp": "article",
+        "pp": [
+          1
+        ],
+        "t": "Feuilleton"
+      },
+      "l": {
+        "id": "DIVL36",
+        "parts": [
+          {
+            "comp_role": "heading",
+            "comp_id": "P1_Ar0010100",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010101",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010102",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010103",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0037",
+        "tp": "article",
+        "pp": [
+          1
+        ],
+        "t": "Englands K\u00f6nigin ordnet eine w\u00f6chentlich..."
+      },
+      "l": {
+        "id": "DIVL47",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010200",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010201",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0038",
+        "tp": "ad",
+        "pp": [
+          4
+        ],
+        "t": "UNKNOWN"
+      },
+      "l": {
+        "id": "DIVL5",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0041700",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0041701",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0041702",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P4_Ad0041703",
+            "comp_fileid": "ALTO0004",
+            "comp_page_no": 4
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0039",
+        "tp": "article",
+        "pp": [
+          1
+        ],
+        "t": "lung der cermrten Hauptstadt: \u201eEs ist h\u00f6..."
+      },
+      "l": {
+        "id": "DIVL54",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010300",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P1_Ar0010301",
+            "comp_fileid": "ALTO0001",
+            "comp_page_no": 1
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0040",
+        "tp": "article",
+        "pp": [
+          2
+        ],
+        "t": "setzt in ber Schule nur fort, was die El..."
+      },
+      "l": {
+        "id": "DIVL61",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020000",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0041",
+        "tp": "article",
+        "pp": [
+          2
+        ],
+        "t": "Ober\u00e4geri. (Schlu\u00df). Also auch bei der T..."
+      },
+      "l": {
+        "id": "DIVL66",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020100",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020101",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0042",
+        "tp": "article",
+        "pp": [
+          2
+        ],
+        "t": "Ware\u00bb vergoldet und von dem Verdecke hin..."
+      },
+      "l": {
+        "id": "DIVL73",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020200",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020201",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020202",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0043",
+        "tp": "article",
+        "pp": [
+          2
+        ],
+        "t": "Z\u00fcrich. (Korr.) Die Er\u00e4ffnungs-Vorstellu..."
+      },
+      "l": {
+        "id": "DIVL82",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020300",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020301",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020302",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020303",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020304",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P2_Ar0020305",
+            "comp_fileid": "ALTO0002",
+            "comp_page_no": 2
+          }
+        ]
+      }
+    },
+    {
+      "m": {
+        "id": "NZG-1881-10-01-a-i0044",
+        "tp": "article",
+        "pp": [
+          3
+        ],
+        "t": "\u2014 Luzem hatte in dieser Woche wieder ein..."
+      },
+      "l": {
+        "id": "DIVL97",
+        "parts": [
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030000",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030001",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030002",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          },
+          {
+            "comp_role": "body",
+            "comp_id": "P3_Ar0030003",
+            "comp_fileid": "ALTO0003",
+            "comp_page_no": 3
+          }
+        ]
+      }
+    }
+  ],
+  "id": "NZG-1881-10-01-a",
+  "ar": "open_public",
+  "pp": [
+    "NZG-1881-10-01-a-p0001",
+    "NZG-1881-10-01-a-p0002",
+    "NZG-1881-10-01-a-p0003",
+    "NZG-1881-10-01-a-p0004"
+  ]
+}

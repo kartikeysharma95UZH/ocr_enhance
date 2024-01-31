@@ -5,7 +5,7 @@
 
 output/
 enhanced/
-s3_data/
+# s3_data/
 nohup.out
 
 models/final/bnl-epr-de-fr-lb.jsonl

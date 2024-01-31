@@ -1,7 +1,5 @@
 from enum import Enum
-import argparse
 import os
-# import sys
 
 class ParseMode(Enum):
     SINGLE      = 'single'
@@ -10,21 +8,10 @@ class ParseMode(Enum):
     def __str__(self):
         return self.value
 
-# def readable_file(x):
-# 	if not os.path.isfile(x):
-# 		raise argparse.ArgumentTypeError('{} does not exist'.format(x))
-# 	return x
-
 def readable_folder(x):
 	if not os.path.isdir(x):
-		# raise argparse.ArgumentTypeError('{} does not exist'.format(x))
 		print("Directory does not exist... Checking for s3 config")
 	return x
-
-# def print_kvp(dictionary):
-# 	print('Parameters:')
-# 	for k, v in dictionary.items():
-# 		print(' > {:15} : {}'.format(k,v))
 
 # defines the actions and options stated in the readme file
 SUBPARSERS = {

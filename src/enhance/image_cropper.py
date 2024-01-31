@@ -1,9 +1,13 @@
 import constants.constants as ct
 import cv2
-from typing import Dict, Optional, Any
+from typing import Dict, Optional
+from enhance.page_parser import Block
+
 
 # crops all images from image file for a set of blocks related to the same page file
-def get_images(image_path: str, blocks_stuff: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+def get_images(
+    image_path: str, blocks_stuff: Dict[str, Block]
+) -> Optional[Dict[str, Block]]:
     """
     Crop images for a set of blocks related to the same page file.
 
@@ -27,10 +31,17 @@ def get_images(image_path: str, blocks_stuff: Dict[str, Any]) -> Optional[Dict[s
             y = coords[1]
             w = coords[2]
             h = coords[3]
-            if x+w > (len(image[0])+ct.IMG_CROP_TOLERANCE) or y+h > (len(image)+ct.IMG_CROP_TOLERANCE):
-                print('image coordinates for block ' + block_id + ' are out of bounds in image ' + image_path)
+            if x + w > (len(image[0]) + ct.IMG_CROP_TOLERANCE) or y + h > (
+                len(image) + ct.IMG_CROP_TOLERANCE
+            ):
+                print(
+                    "image coordinates for block "
+                    + block_id
+                    + " are out of bounds in image "
+                    + image_path
+                )
                 return
-            cropped_image = image[y: y+h, x: x+w]
+            cropped_image = image[y : y + h, x : x + w]
             blocks_stuff[block_id].image = cropped_image
     else:
         print("couldn't read image at " + image_path)

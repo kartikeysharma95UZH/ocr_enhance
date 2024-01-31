@@ -2,7 +2,8 @@ from ocr.pipe.bin import bin_otsu
 from seg.apply_seg import combiseg
 from fcr.apply_fcr import predict_font
 from ocr.pipe.models import Models
-from ocr.pipe.block import Block
+# from ocr.pipe.block import Block
+from enhance.page_parser import Block
 from ocr.pipe.pred import Predictor
 # from ocr.pipe.alto import generate_alto
 
