@@ -4,6 +4,7 @@
 .vscode/
 
 output/
+enhanced/
 s3_data/
 nohup.out
 

@@ -14,10 +14,13 @@ def decompress_file(input_path, output_path):
             with open(output_path, 'wb') as f_out:
                 f_out.write(f_in.read())
         print(f"File decompressed successfully to {output_path}")
+        # Remove the input file after successful decompression
+        os.remove(input_path)
+        print(f"Input file {input_path} removed after decompression")        
     except Exception as e:
         print(f"Error decompressing file: {e}")
 
-def download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, date, local_directory, config_file_path):    
+def download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, date, issue_version, local_directory, config_file_path):    
     # Read the configuration from the .s3cfg file
     config_parser = ConfigParser()
     config_parser.read(config_file_path)
@@ -34,19 +37,19 @@ def download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, d
 
     try:
         # Download pages file
-        pages_key = f'{newspaper_name}/pages/{newspaper_name}-{year}/{newspaper_name}-{year}-{month}-{date}-a-pages.jsonl.bz2'
+        pages_key = f'{newspaper_name}/pages/{newspaper_name}-{year}/{newspaper_name}-{year}-{month}-{date}-{issue_version}-pages.jsonl.bz2'
         print(f'pages key to be downloaded = {pages_key}')
         issues_key = f'{newspaper_name}/issues/{newspaper_name}-{year}-issues.jsonl.bz2'
         print(f'issues key to be downloaded = {issues_key}')
         
         print('\nDownloading the pages JSONL from s3 .....')        
-        pages_local_path = f'{local_directory}/{newspaper_name}/pages'
+        pages_local_path = f'{local_directory}/{newspaper_name}-{year}-{month}-{date}-{issue_version}/pages'
         # os.makedirs(os.path.dirname(pages_local_path), exist_ok=True)
 
         if not os.path.exists(pages_local_path):
             os.makedirs(pages_local_path)
 
-        pages_local_path = os.path.join(pages_local_path, f'{newspaper_name}-{year}-{month}-{date}-a-pages.jsonl.bz2')
+        pages_local_path = os.path.join(pages_local_path, f'{newspaper_name}-{year}-{month}-{date}-{issue_version}-pages.jsonl.bz2')
         print(f'pages_local_path is {pages_local_path}')
         s3.download_file(bucket_name, pages_key, pages_local_path)
         uncompressed_pages_local_path = pages_local_path.rsplit('.bz2', 1)[0]
@@ -56,7 +59,7 @@ def download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, d
         print('\nDownloading the Issues JSONL from s3 .....')
         # issues_key = f'{newspaper_name}/issues/{newspaper_name}-{year}-issues.jsonl.bz2'
         # print(f'issues key = {issues_key}')
-        issues_local_path = f'{local_directory}/{newspaper_name}'
+        issues_local_path = f'{local_directory}/{newspaper_name}-{year}-{month}-{date}-{issue_version}'
         # os.makedirs(os.path.dirname(issues_local_path), exist_ok=True)
         
         if not os.path.exists(issues_local_path):
@@ -96,9 +99,9 @@ def extract_pages(jsonl_path):
     except Exception as e:
         print(f"Error extracting and saving records: {e}")
         
-def extract_issues(jsonl_path, newspaper_name, year, month, date):
+def extract_issues(jsonl_path, newspaper_name, year, month, date, issue_version):
     print('\nExtracting required Issue from issues.jsonl .....')
-    target_id = f"{newspaper_name}-{year}-{month}-{date}-a"
+    target_id = f"{newspaper_name}-{year}-{month}-{date}-{issue_version}"
 
     output_directory = os.path.dirname(jsonl_path)
     output_file_path = os.path.join(output_directory, f"{target_id}.json")
@@ -170,14 +173,15 @@ def prepare_data(config_file_path):
     year = config.get('default', 'year')
     month = config.get('default', 'month')
     date = config.get('default', 'date')
+    issue_version = config.get('default', 'issue_version')
     local_directory = config.get('default', 'local_directory')    
 
-    pages_path, issues_path = download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, date, local_directory, config_file_path)
+    pages_path, issues_path = download_newspaper_files_from_s3(bucket_name, newspaper_name, year, month, date, issue_version, local_directory, config_file_path)
     extract_pages(pages_path)
-    extract_issues(issues_path, newspaper_name, year, month, date)
+    extract_issues(issues_path, newspaper_name, year, month, date, issue_version)
 
     pages_local_path = os.path.dirname(pages_path)
-    images_local_path = f'{local_directory}/{newspaper_name}/images'
+    images_local_path = f'{local_directory}/{newspaper_name}-{year}-{month}-{date}-{issue_version}/images'
 
     if not os.path.exists(images_local_path):
         os.makedirs(images_local_path)

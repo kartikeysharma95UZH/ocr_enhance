@@ -146,12 +146,25 @@ def improve_pages(issues_directory, required_epr):
 	date = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
 	path = ct.OCR_OUTPUT_PATH + str(date)
 
-	# create mets paths list
+	# # create mets paths list
+	# issues_paths = list()
+	# for root, _, files in os.walk(issues_directory):
+	# 	for f in files:
+	# 		if f.endswith('-a.json'):
+	# 			issues_paths.append(root + '/' + f)
+
+    # Check each folder in the issues_directory
 	issues_paths = list()
-	for root, _, files in os.walk(issues_directory):
-		for f in files:
-			if f.endswith('-a.json'):
-				issues_paths.append(root + '/' + f)
+	for folder_name in os.listdir(issues_directory):
+		folder_path = os.path.join(issues_directory, folder_name)
+
+		# Check if it is a directory
+		if os.path.isdir(folder_path):
+			# Check if any file ends with ".json" in the root of the folder
+			for f in os.listdir(folder_path):
+				if f.endswith('.json'):
+					json_file_path = os.path.join(folder_path, f)
+					issues_paths.append(json_file_path)	
 	print('identified all issues files within directory')
 
 	# load models
