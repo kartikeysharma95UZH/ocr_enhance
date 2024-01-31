@@ -3,17 +3,29 @@
 
 After having followed the [installation](#installation) instructions, Nautilus-OCR can be run by using the included BnL models and example JSON data for the purpose of enhancement
 
+### Copy BnL Models
+
 With `ocr_enhance/` as the current working directory, first copy the BnL models to the `final/` folder.<sup>1</sup>
 
 	cp models/bnl/* models/final/
+
+### Run Enhancement
 
 Next, run [enhance](#enhance) on the `data/examples/` directory, containg a single issue `NZG-1881-10-01-a`
 
 	python3 src/main.py enhance -d data/examples -r 0.02
 
-to generate new JSON file for every block with a minimum enhancement prediction of 2%. Finally, the newly generated files can be located in `data/examples/NZG-1881-10-01-a/enhanced`.
+This command generates a new JSON file for every block with a minimum enhancement prediction of 2%. Finally, the newly generated files can be located in `data/examples/NZG-1881-10-01-a/enhanced`.
 
 <sup>1</sup> As explained in `models/final/README.md`, the models within `models/final/` are automatically applied when executing the **enhance**, **train-epr**, **ocr** and **test-ocr** actions. Models outside of `models/final/` are supposed to be stored for testing and comparison purposes.
+
+### Alternate Way: Using S3
+
+Alternatively, instead of using the examples from data/examples/, you can directly download the issues and pages from the S3 bucket by adding the details in .s3cfg <sup>2</sup> Once the information in the configuration file is complete, execute the following command:
+
+	python3 src/main.py enhance -d .s3cfg -r 0.02
+
+<sup>2</sup> The template for configuratioin file can be found in `.s3cfg`
 
 # Requirements
 
@@ -26,8 +38,8 @@ Windows is not supported at the moment.
 The software has been developed using Python 3.8.5.
 * **Dependencies**<br>
 Access to the libraries listed in `requirements.txt`.
-* **METS/ALTO**<br>
-METS/ALTO packages as data, or alternatively TextBlock images representing single-column snippets of text.
+* **Impresso Data**<br>
+Issues along with Pages and corrsponding images as the data in the JSON format
 
 # Installation
 
