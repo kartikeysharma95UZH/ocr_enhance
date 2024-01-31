@@ -2,7 +2,31 @@ import os
 import json
 from collections import defaultdict
 
-def parse_pages_structure(root_path):
+def parse_pages_structure(root_path: str):
+    """
+    Parses the structure of pages in an issue.
+
+    Args:
+        root_path (str): The root path of the issue containing 'pages' and 'images' directories.
+
+    Returns:
+        Tuple[Dict[str, Dict[str, Optional[str]]], int]:
+            A tuple containing:
+                - A dictionary with region information about each pages.
+                - The total number of blocks across all pages.
+
+    Raises:
+        Any exceptions raised during the parsing.
+
+    Note:
+        This function takes the original path of the issue as input, parses each page of the issue,
+        extracts the 'pOf' IDs, and appends 'block_1', 'block_2', etc., depending on their frequency
+        inside each page. Image paths and page file paths are also extracted and stored in the dictionary.
+        The function prepares the entire structure of all the pages and how many blocks are present inside each page.
+
+    Example:
+        >>> parse_pages_structure('/path/to/issue')
+    """    
     pages_directory = os.path.join(root_path, 'pages')
     image_directory = os.path.join(root_path, 'images')
 
@@ -11,12 +35,6 @@ def parse_pages_structure(root_path):
 
     # Dictionary to store the frequency of each unique ID
     unique_id_frequency = defaultdict(int)
-
-    # Iterate through each JSON file in the directory
-    for json_file_name in os.listdir(root_path):
-        # Check if the file is a JSON file
-        if json_file_name.endswith('.json'):
-            ark_id = json_file_name
                 
     total_blocks = 0
     # Iterate through each JSON file in the directory
@@ -59,4 +77,4 @@ def parse_pages_structure(root_path):
                 for block_name, block_info in pages_json_data.get('blocks', {}).items():
                     pages_data[pages_file_name]['blocks'][block_name] = block_info
 
-    return pages_data, ark_id, total_blocks 
+    return pages_data, total_blocks 

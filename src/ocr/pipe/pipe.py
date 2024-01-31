@@ -6,9 +6,23 @@ from ocr.pipe.block import Block
 from ocr.pipe.pred import Predictor
 # from ocr.pipe.alto import generate_alto
 
-# ocr applied on image using models object, alto format can be requested 
-def ocr(block: Block, models: Models, alto=False, addOffset=False):
+# ocr applied on image using models object
+def ocr(block: Block, models: Models) -> Block:
+	"""
+	Apply OCR on an image using models.
 
+	Args:
+		block (Block): The Block object containing information about the image and OCR results.
+		models (Models): The Models object containing the necessary models for OCR.
+
+	Returns:
+		Block: The Block object updated with OCR results.
+
+	Example:
+		>>> block = ocr(<Block object>, <Models object>)
+		>>> print(block)
+		<Updated Block object>
+	"""
 	# binarization
 	bin_image, inv_image = bin_otsu(block.image)
 	block.bin_image = bin_image
@@ -23,12 +37,6 @@ def ocr(block: Block, models: Models, alto=False, addOffset=False):
 	# character recognition
 	predictor = Predictor(block, models)
 	block = predictor.kraken()
-
-	# # Remove this 
-	# attributes = vars(block)
-	# for attribute, value in attributes.items():
-	# 	print(f"{attribute}: ")
-	# # Remove this 
 	
 	# # alto generation
 	# if alto:

@@ -1,9 +1,24 @@
 import constants.constants as ct
 import cv2
+from typing import Dict, Optional, Any
 
-# crops all images from image file for a set of blocks related to the same alto file
-def get_images(image_path, blocks_stuff):
+# crops all images from image file for a set of blocks related to the same page file
+def get_images(image_path: str, blocks_stuff: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """
+    Crop images for a set of blocks related to the same page file.
 
+    Args:
+        image_path (str): Path to the image file.
+        blocks_stuff (Dict[str, Block]): Dictionary containing information about text blocks.
+
+    Returns:
+        Optional[Dict[str, Block]]: Updated dictionary containing information about text blocks with cropped images.
+
+    Example:
+        >>> updated_blocks = get_images('/path/to/image.jpg', {'block_1': <Block object 1>, 'block_2': <Block object 2>})
+        >>> print(updated_blocks)
+        {'block_1': <Block object 1>, 'block_2': <Block object 2>, ...}
+    """
     image = cv2.imread(image_path)
     if not image is None:
         for block_id in blocks_stuff:
